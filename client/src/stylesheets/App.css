@@ -4,22 +4,25 @@
   padding: 0;
   --lightning-blue: #51d0de;
   --lightning-purple: #bf4aa8;
-  --lightning-white: #d9d9d9;
+  --grey-matter: #d9d9d9;
   --olive-black: #2f2f2f;
 }
 
 html {
   font: 20px/1.5 "Times New Roman";
   font-family: "Times New Roman", Times, serif;
-  background-color: var(--lightning-white);
+}
+
+ul {
+  list-style-type: none;
 }
 
 .wrapper {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 0.2fr 1fr 0.1fr;
   grid-template-areas:
     "header"
     "main"
     "footer";
-  height: 100vmin;
+  min-height: 100vh;
 }
