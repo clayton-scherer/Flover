@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./components/Layout/Layout";
-import EntreeCardList from "./components/EntreeCardList/EntreeCardList";
+import EntreeCard from "./components/EntreeCard/EntreeCard";
 import "./stylesheets/App.css";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="wrapper">
       <Layout>
-        <EntreeCardList entrees={entrees} />
+        <EntreeCard entree={entrees[0]} />
       </Layout>
     </div>
   );
