@@ -2,9 +2,11 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const entreeRouter = require("./routes/entree-router");
+const cors = require("cors");
 const app = express();
 require("./models/db");
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
