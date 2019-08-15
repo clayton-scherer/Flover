@@ -1,5 +1,8 @@
 .footer {
   background-color: var(--lightning-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: footer;
   text-align: center;
 }
