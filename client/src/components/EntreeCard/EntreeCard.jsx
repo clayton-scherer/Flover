@@ -11,7 +11,7 @@ const EntreeCard = () => {
       <span className="entree__picture" style={style} />
       <h3 className="entree__cookTime">Cook Time: 20 min</h3>
       <h3 className="entree__ingredients">Ingredients: number of items</h3>
-      <div className="buttonGroup">
+      <div className="button-group">
         <button className="pass-button entreeButton">&#10005;</button>
         <button className="like-button entreeButton">&#10004;</button>
       </div>

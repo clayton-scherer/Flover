@@ -20,7 +20,7 @@ ul {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 80vh 0.5fr;
+  grid-template-rows: 0.1fr auto 0.1fr;
   grid-template-areas:
     "header"
     "main"
