@@ -1,15 +1,21 @@
 import React from "react";
 import "../../stylesheets/EntreeCard.css";
 
-
-const EntreeCard = ({entree}) => {
+const EntreeCard = () => {
+  const style = {
+    backgroundImage: `url(https://assets.kraftfoods.com/recipe_images/opendeploy/52089_640x428.jpg)`
+  };
   return (
-    <div className="entree-card">
-      <h2 className="entree__name">{entree.name}</h2>
-      <img className="entree__picture" src={entree.pictureURL} alt={entree.name}></img>
-      <h3 className="entree__cookTime">Cook Time: {entree.cookTime}</h3>
-      <h3 className="entree__ingredients">Ingredients: {entree.ingredients.length}</h3>
-    </div>
+    <article className="entree-card">
+      <h2 className="entree__name">entree name</h2>
+      <span className="entree__picture" style={style} />
+      <h3 className="entree__cookTime">Cook Time: 20 min</h3>
+      <h3 className="entree__ingredients">Ingredients: number of items</h3>
+      <div className="buttonGroup">
+        <button className="pass-button entreeButton">&#10005;</button>
+        <button className="like-button entreeButton">&#10004;</button>
+      </div>
+    </article>
   );
 };
 export default EntreeCard;

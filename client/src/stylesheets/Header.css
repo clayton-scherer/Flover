@@ -1,5 +1,6 @@
 .main-header {
   background-color: var(--olive-black);
   color: var(--lightning-purple);
+  grid-area: header;
   text-align: center;
 }
