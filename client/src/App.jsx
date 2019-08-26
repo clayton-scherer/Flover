@@ -11,11 +11,19 @@ const App = () => {
   //     .then(entrees => setEntrees(entrees));
   // }, []);
 
+  const handlePassIncriment = () => {
+    console.log("passed");
+  };
+  const handleLikeIncriment = () => {
+    console.log("liked");
+  };
+
   return (
     <Layout>
-      <div className="entree-card__wrapper">
-        <EntreeCard />
-      </div>
+      <EntreeCard
+        handlePassIncriment={handlePassIncriment}
+        handleLikeIncriment={handleLikeIncriment}
+      />
     </Layout>
   );
 };
