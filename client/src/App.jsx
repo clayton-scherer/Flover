@@ -1,28 +1,37 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./components/Layout/Layout";
 import EntreeCard from "./components/EntreeCard/EntreeCard";
-import defaultEntree from "./components/defaultEntree";
+import TutorialCard from "./components/TutorialCard/TutorialCard";
 import "./stylesheets/App.css";
 
 const App = () => {
   const [entrees, setEntrees] = useState([]);
-  const [entree, setEntree] = useState(defaultEntree);
+  const [entree, setEntree] = useState({});
+  const [tutorial, setTutorial] = useState(true);
   let [index, setIndex] = useState(0);
   useEffect(() => {
     fetch("http://localhost:3000/api/entrees")
       .then(res => res.json())
       .then(entrees => setEntrees(entrees));
-  }, []);
+    setEntree(entrees[index]);
+  }, [entrees, index]);
 
-  // iterate through entrees array to present the next entree in the 'queue'
   const handleIncrement = () => {
     setEntree(entrees[index]);
     setIndex((index += 1));
   };
 
+  const handleTutorial = () => {
+    setTutorial(false);
+  };
+
   return (
     <Layout>
-      <EntreeCard handleIncrement={handleIncrement} entree={entree} />
+      {tutorial ? (
+        <TutorialCard handleTutorial={handleTutorial} />
+      ) : (
+        <EntreeCard handleIncrement={handleIncrement} entree={entree} />
+      )}
     </Layout>
   );
 };
